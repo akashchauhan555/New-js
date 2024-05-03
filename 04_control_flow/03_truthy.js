@@ -36,3 +36,20 @@ false == ''               // => true
 
 
 // Nullish Coslescing Operator (??): null undefined
+
+let val1;
+//val1 = 5 ?? 10                             // => 5
+// val1 = null ?? 10;                        // => 10
+// val1 = undefined ?? 38;                   // => 38
+// val1 = null ?? 30 ?? 40;                  // => 30
+// val1 = undefined ?? 40 ?? 60;             // => 40
+
+//console.log(val1);
+
+
+// Ternary Operator
+
+// condition ? true : false
+
+const iceTeaPrice = 100
+iceTeaPrice <= 80 ? console.log("less than 80 ") : console.log("more than 80");                     // => more than 80
