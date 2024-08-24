@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>html events</title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue; border: 1px solid black">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li>
+                <img width="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="photoshop" />
+            </li>
+            <li>
+                <img width="200px" id="japan"
+                    src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="" />
+            </li>
+            <li>
+                <img width="200px" id="river"
+                    src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="" />
+            </li>
+            <li>
+                <img width="200px" id="owl"
+                    src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="" />
+            </li>
+            <li>
+                <img width="200px" id="prayer"
+                    src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="" />
+            </li>
+            <li>
+                <a style="color: aliceblue" href="https://google.com" id="google">Google</a>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('river').onclick = function() {
+    //     alert("river clicked")
+    // }
+
+    // document.getElementById('prayer').addEventListener('click', (e) => {
+    //     // alert("prayer clicked")
+    //     // console.log(e);
+    //     blur("prayer has been blurred")
+
+    // })
+
+    // document.getElementById("images").addEventListener(
+    //     "click",
+    //     function (e) {
+    //         console.log("clicked inside the ul");
+    //         //e.stopPropagation()             // it bubbling bottom to top           
+    //     }, false);
+
+    // document.getElementById("river").addEventListener(
+    //     "click",
+    //     (e) => {
+    //         console.log("river clicked");
+    //         e.stopPropagation()                // only prints river clicked and stop the event propagation
+    //     }, false); 
+        
+         // This is called bubbling in which it goes from bottom to top(like when we first click on river then it shows :> river clicked and in the next line it print clicked inside the ul)
+
+    // document.getElementById('images').addEventListener('click', (e) => {
+    //     console.log("clicked inside the ul");
+    // }, true)
+
+    // document.getElementById('prayer').addEventListener('click', (e) => {
+    //     console.log("prayer clicked ");
+    // }, true)
+
+    // This is called the capturing and in this the printing start from the top to bottom and at last of the closing statement true keyword must be used.
+
+    // If we use stopPropagation() it stop the propagation of the event and it only print the cliked item.
+
+
+    //  document.getElementById('google').addEventListener('click', (e) => {
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log("google clicked");
+
+    // }, false );
+
+
+    //     document.getElementById('images').addEventListener('click', function(e) {
+    //         console.log(e.target.parentNode);
+    //         let removeIt = e.target.parentNode;
+    //         removeIt.remove();   
+    //         // removeIt.parentNode.removeChild(removeIt);
+    //     }, false)
+
+
+    document.getElementById('images').addEventListener('click', function(e) {
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG') {
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+    })
+
+</script> 
+</html>

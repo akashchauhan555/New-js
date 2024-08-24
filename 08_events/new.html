@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execution Context</title>
+</head>
+<body>
+    <h2>Javascript interview practice</h2>
+
+    <script>
+        var a = "hello world!"
+        console.log(a);
+        
+        function demo1() {
+            console.log("demo1 fun");
+            demo2();
+        } 
+        function demo2() {
+        console.log("demo2 fun");
+        }
+        demo1();
+        console.log("It is GEC");
+
+    </script>
+</body>
+</html>
